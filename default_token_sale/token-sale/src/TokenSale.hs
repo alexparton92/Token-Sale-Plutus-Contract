@@ -38,8 +38,8 @@ import           Ledger                   hiding (singleton)
   The seller vkey must be public such that this script can be 
   compiled by any buyer to confirm authencity.
   
-  { tsSellerAddress  = pubKeyHashAddress "PUB_KEY_HASH_HERE"
-  , tsCost           = INTEGER_PRICE_HERE
+  { tsSellerAddress  = pubKeyHashAddress "acct_xvk12f4ve0f6fgjd9je4uuvqatzm34q80m9wtqrewj3vfvtynq3865xmjprupu2sz6cp2g950vvdlczztrkmqc0g6l57wf99gnxwurp7n4sfhqjml"
+  , tsCost           = 35
   }
 -}
 data TokenSaleParams = TokenSaleParams
@@ -108,8 +108,8 @@ typedValidator ts = Scripts.mkTypedValidator @Typed
 
 validator :: Plutus.Validator
 validator = Scripts.validatorScript (typedValidator ts)
-    where ts = TokenSaleParams { tsSellerAddress  = pubKeyHashAddress "PUBLIC_KEY_HASH_ADDRESS" -- put in the seller address here
-                               , tsCost           = INTEGER_PRICE_HERE                          -- Price for the token in lovelace
+    where ts = TokenSaleParams { tsSellerAddress  = pubKeyHashAddress "acct_xvk12f4ve0f6fgjd9je4uuvqatzm34q80m9wtqrewj3vfvtynq3865xmjprupu2sz6cp2g950vvdlczztrkmqc0g6l57wf99gnxwurp7n4sfhqjml" -- put in the seller address here
+                               , tsCost           = 35                          -- Price for the token in lovelace
                                }
 
 
